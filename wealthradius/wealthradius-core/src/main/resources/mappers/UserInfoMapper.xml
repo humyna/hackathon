@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="info.zoio.hackathon.wealthradius.core.mappers.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="info.zoio.hackathon.wealthradius.core.mappers.pojo.UserInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="mobile_no" jdbcType="VARCHAR" property="mobileNo" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="nick_name" jdbcType="VARCHAR" property="nickName" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="face_sign_info" jdbcType="VARCHAR" property="faceSignInfo" />
+    <result column="face_recognition_date" jdbcType="TIMESTAMP" property="faceRecognitionDate" />
+    <result column="invite_code" jdbcType="INTEGER" property="inviteCode" />
+    <result column="comments" jdbcType="VARCHAR" property="comments" />
+  </resultMap>
+</mapper>

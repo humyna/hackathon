@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="info.zoio.hackathon.wealthradius.core.mappers.OrderInfoMapper">
+  <resultMap id="BaseResultMap" type="info.zoio.hackathon.wealthradius.core.mappers.pojo.OrderInfo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="order_id" jdbcType="INTEGER" property="orderId" />
+    <result column="product_id" jdbcType="INTEGER" property="productId" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="pay_amount" jdbcType="DECIMAL" property="payAmount" />
+    <result column="buy_unit" jdbcType="INTEGER" property="buyUnit" />
+    <result column="pay_date" jdbcType="TIMESTAMP" property="payDate" />
+    <result column="buy_type" jdbcType="VARCHAR" property="buyType" />
+    <result column="group_id" jdbcType="INTEGER" property="groupId" />
+    <result column="pay_state" jdbcType="VARCHAR" property="payState" />
+    <result column="order_state" jdbcType="VARCHAR" property="orderState" />
+    <result column="estimated_earnings" jdbcType="DECIMAL" property="estimatedEarnings" />
+    <result column="reward_income" jdbcType="DECIMAL" property="rewardIncome" />
+    <result column="actual_earnings" jdbcType="DECIMAL" property="actualEarnings" />
+    <result column="exit_time" jdbcType="TIMESTAMP" property="exitTime" />
+    <result column="comments" jdbcType="VARCHAR" property="comments" />
+  </resultMap>
+</mapper>
