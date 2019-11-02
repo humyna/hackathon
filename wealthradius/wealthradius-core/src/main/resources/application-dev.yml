@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: wealthradius
+  datasource:
+    name: data-export
+    url: jdbc:mysql://10.141.8.xxx:3306/wealthradius?characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull
+    driver-class-name: com.mysql.jdbc.Driver
+    username: wealth_radius
+    password: asdw@ISA!&A
+    #连接池配置
+    type: org.apache.tomcat.dbcp.dbcp.BasicDataSource
+    dbcp2:
+      max-wait-millis: 10000
+      min-idle: 5
+      max-total: 150
+      initial-size: 5
+      validation-query: SELECT 1
+      connection-properties: characterEncoding=utf8
+  
+#mybatis config
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mappers/*.xml
+  type-aliases-package: info.zoio.hackathon.wealthradius.core.pojo
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # exclude: beans,trace
+        # exclude: "*"
+        include: "*"
+      health: 
+        show-details: "always"
+    shutdown:
+      enabled: true

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<context id="mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat"><!-- targetRuntime=MyBatis3Simple or MyBatis3 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<!-- <plugin type="org.mybatis.generator.plugins.CachePlugin"></plugin> -->
+		<!--<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin> -->
+		<!--<plugin type="org.mybatis.generator.plugins.ToStringPlugin"></plugin> -->
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="tk.mybatis.mapper.common.Mapper" />
+			<property name="caseSensitive" value="true" />
+		</plugin>
+		<commentGenerator>
+			<!--如果打开，则自动生成xml会重复 -->
+			<!--<property name="suppressDate" value="true"/> -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://10.141.8.141:3306/yrd_data_export?characterEncoding=utf8"
+                        userId="yrd_data_export"
+                        password="s0QMX*gZVMLX">
+        </jdbcConnection>
+        
+		<javaTypeResolver> <property name="forceBigDecimals" value="false"/> </javaTypeResolver> 
+
+		<!-- java bean -->
+		<javaModelGenerator
+			targetPackage="info.zoio.hackathon.wealthradius.core.mappers.pojo"
+			targetProject="wealthradius-core/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+
+		<!-- sqlmap xml -->
+		<sqlMapGenerator
+			targetPackage="mappers"
+			targetProject="wealthradius-core/src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- sqlmap Interface -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="info.zoio.hackathon.wealthradius.core.mappers"
+			targetProject="wealthradius-core/src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table tableName="order_info">
+			<generatedKey column="order_id" sqlStatement="JDBC"/>
+		</table>
+
+	</context>
+</generatorConfiguration>
